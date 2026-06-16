@@ -1,0 +1,122 @@
+body {
+    background-color: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#canvas {
+    background-image: url('https://i.pinimg.com/1200x/c3/d8/78/c3d878c664dbf4dffb8e92f8520053f0.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#img-cover {
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    background: red;
+    border-radius: 100%;
+}
+
+#img-user {
+    height: 40px;
+    width: 45px;
+    object-position: -5px -3px;
+    object-fit: cover;
+}
+
+.glass-card-mapel {
+    position: relative;
+    background: transparent !important;
+    overflow: visible;
+    border: none !important;
+}
+
+.liquid-glass__content {
+    position: relative;
+    z-index: 3;
+}
+
+.liquid-glass__badge {
+    position: relative;
+    z-index: 4;
+}
+
+.glass-card-mapel .liquid-glass--bend {
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border-radius: inherit;
+    filter: url(#glass-blur);
+    inset: 0;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glass-card-mapel .liquid-glass--face {
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glass-card-mapel .liquid-glass--edge {
+    border-radius: inherit;
+    inset: 0;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        inset 0 2px 2px 0 rgba(255, 255, 255, 0.65),
+        inset 0 -2px 2px 0 rgba(255, 255, 255, 0.65),
+        inset 0 6px 8px -2px rgba(255, 255, 255, 0.25),
+        inset 0 -6px 8px -2px rgba(255, 255, 255, 0.25);
+}
+
+.scanner-wrap {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+}
+
+#qr-reader {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+#qr-reader video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px;
+}
+
+#qr-reader__dashboard,
+#qr-reader__status_span {
+    display: none !important;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+}
