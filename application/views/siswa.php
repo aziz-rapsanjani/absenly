@@ -66,6 +66,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let html5Qr;
         function startScanner() {
@@ -91,6 +92,16 @@
         }
         function onScanFailure(error) {}
         window.addEventListener('DOMContentLoaded', startScanner);
+        
+        <?php $swal = $this->session->flashdata('swal'); ?>
+        <?php if ($swal): ?>
+            Swal.fire({
+                icon: '<?php echo $swal['icon']; ?>',
+                title: '<?php echo $swal['title']; ?>',
+                text: '<?php echo $swal['text']; ?>',
+                confirmButtonColor: '#0d6efd'
+            });
+        <?php endif; ?>
     </script>
 </body>
 </html>
